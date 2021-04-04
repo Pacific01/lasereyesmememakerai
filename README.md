@@ -9,6 +9,11 @@ export FLASK_ENV=development
 npx tailwindcss-cli@latest build app.scss -o static/app.css
 ```
 
+## Minify
+```sh
+csso static/app.css --output static/app.css
+```
+
 # Links de interés:
 
 - [Building a vue.js drag-and-drop file component](https://stenvdb.be/articles/building-a-vuejs-drag-and-drop-file-component)
