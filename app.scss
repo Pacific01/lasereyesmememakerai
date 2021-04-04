@@ -2,3 +2,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.animate { animation: disappear 2.5s linear; }
+
+@keyframes disappear {
+  30%  { opacity: 0; }
+  60%  { opacity: 1; }
+  100% { opacity: 0; }
+}
