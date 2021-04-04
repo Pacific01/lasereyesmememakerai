@@ -8,7 +8,7 @@
   <body>
 
   <!-- This example requires Tailwind CSS v2.0+ -->
-  <div class="relative bg-gray-50 overflow-hidden">
+  <div class="relative z-0 bg-gray-50 overflow-hidden">
 
     <div class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full" aria-hidden="true">
       <div class="relative h-full max-w-7xl mx-auto">
@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
+    <main class="mt-16 mx-auto max-w-7 xl px-4 sm:mt-24 relative z-10">
 
       <div class="text-center">
         <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
@@ -39,31 +39,61 @@
           <span class="block text-indigo-600 xl:inline">Now</span>
         </h1>
         <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-          Upload you foto our sofisticated AI algorith will add a randome laser on your eyes.
+          Upload you foto our sofisticated AI algorith will add a random laser on your eyes.
         </p>
-        <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+        <!--<div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">-->
+        <div class="max-w-7xl pt-5 mx-auto sm:px-6 lg:px-8">
           <form class="space-y-8 divide-y divide-gray-200" action="/" method="POST" enctype="multipart/form-data">
             <div class="space-y-8 divide-y divide-gray-200">
-              <div>
-                <label for="foto" class="block text-sm font-medium text-gray-700">
-                Photo
-                </label>
-                <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+              <div id="app">
+                <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md" @dragover="dragover" @dragleave="dragleave" @drop="drop">
                   <div class="space-y-1 text-center">
                     <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
                       <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <div class="flex text-sm text-gray-600">
-                      <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-                        <span>Upload a file</span>
+                      <label for="foto" class="relative cursor-pointer bg-white
+                        rounded-md font-medium text-indigo-600
+                        hover:text-indigo-500 focus-within:outline-none
+                        focus-within:ring-2 focus-within:ring-offset-2
+                        focus-within:ring-indigo-500 px-2 mx-1">
+                        <span>Upload a foto</span>
                         <!--<input id="file-upload" name="file-upload" type="file" >-->
-                        <input type="file" id="foto" name="foto" class="sr-only" required>
+                        <input type="file" id="foto" name="foto" class="sr-only" required @change="onChange" ref="file">
                       </label>
                       <p class="pl-1">or drag and drop</p>
                     </div>
                     <p class="text-xs text-gray-500">
                       PNG, JPG, GIF up to 10MB
                     </p>
+                    <ul class="mt-4" v-if="this.filelist.length" v-cloak>
+                      <li class="text-sm p-1" v-for="file in filelist">
+                        <div class="flex items-start">
+                          <div class="flex-shrink-0">
+                            <!-- Heroicon name: outline/check-circle -->
+                            <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
+                          <div class="ml-3 w-0 flex-1 pt-0.5">
+                            <p class="text-sm font-medium text-gray-900">
+                              {% raw %}
+                               {{ file.name }}
+                              {% endraw %}
+                            </p>
+                          </div>
+                          <div class="ml-4 flex-shrink-0 flex">
+                              <button class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="button" @click="remove(filelist.indexOf(file))" title="Remove file">
+                              <span class="sr-only">Close</span>
+                              <!-- Heroicon name: solid/x -->
+                              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -71,7 +101,7 @@
                 <div class="flex justify-center">
                   <div class="rounded-md shadow">
                     <button type="submit" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-                      Laserize Me
+                      ✨  Laserize Me  ✨
                     </button>
                   </div>
                 </div>
@@ -80,8 +110,50 @@
           </form>
         </div>
       </div>
+
     </main>
   </div>
 
   </body>
+
+  <!--<script src="https://unpkg.com/vue@2.6.12/dist/vue.min.js"></script>-->
+  <script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        filelist: [] // Store our uploaded files
+      },
+      methods: {
+        onChange() {
+          this.filelist = [...this.$refs.file.files];
+        },
+        remove(i) {
+          this.filelist.splice(i, 1);
+        },
+        dragover(event) {
+          event.preventDefault();
+          // Add some visual fluff to show the user can drop its files
+          if (!event.currentTarget.classList.contains('bg-green-300')) {
+            event.currentTarget.classList.remove('bg-gray-100');
+            event.currentTarget.classList.add('bg-green-300');
+          }
+        },
+        dragleave(event) {
+          // Clean up
+          event.currentTarget.classList.add('bg-gray-100');
+          event.currentTarget.classList.remove('bg-green-300');
+        },
+        drop(event) {
+          event.preventDefault();
+          this.$refs.file.files = event.dataTransfer.files;
+          this.onChange(); // Trigger the onChange event manually
+          // Clean up
+          event.currentTarget.classList.add('bg-gray-100');
+          event.currentTarget.classList.remove('bg-green-300');
+        }
+      }
+    });
+  </script>
 </html>
