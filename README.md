@@ -20,3 +20,4 @@ csso static/app.css --output static/app.css
 - [Escape string in jinja](https://jinja.palletsprojects.com/en/2.11.x/templates/#escaping)
 - [Emoji Pedia](https://emojipedia.org/sparkles/)
 - [PIL Docs](https://pillow.readthedocs.io/en/stable/reference/Image.html)
+- [Copy to clipboard in Vue](https://daily-dev-tips.com/posts/vanilla-javascript-copy-text-to-clipboard-with-clipboard-api/)
