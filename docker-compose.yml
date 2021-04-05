@@ -1,0 +1,18 @@
+version: '2.3'
+
+services:
+  laser:
+    image: laser
+    container_name: laser
+    working_dir: /code
+    build:
+      context: .
+      #Uncomment this line to run the example on the GPU (requires Nvidia-Docker)
+      # dockerfile: Dockerfile.gpu
+    command: python3 -u app.py
+    ports:
+      - "8181:8181"
+    volumes:
+      - ./:/code
+    #Uncomment this line to run the example on the GPU (requires Nvidia-Docker)
+    # runtime: nvidia
