@@ -140,34 +140,37 @@
           </div>
       </main>
       <div class="bg-indigo-10 relative z-10 mt-10">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-24 lg:px-8 lg:flex lg:items-center lg:justify-between">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-24 lg:px-8
+            lg:flex lg:items-center lg:justify-between text-center">
           <!-- This example requires Tailwind CSS v2.0+ -->
           <div class="bg-green-50 border-l-4 border-green-400 p-4">
-            <div class="flex">
-              <div class="flex flex-shrink-0 mx-3">
-                <span class="font-bold text-green-900 inline-block align-middle self-center">₿</span>
-                <!-- Heroicon name: solid/information-circle -->
-                <!--<svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">-->
-                <!--<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />-->
-                <!--</svg>-->
-              </div>
-              <div class="ml-3 flex">
+            <div class="flex flex-col sm:flex-row justify-center">
+              <div class="ml-3 mb-4 sm:mb-0 flex justify-center">
+                <span class="font-bold text-green-900 inline-block align-middle
+                  self-center mr-2">₿</span>
                 <p class="inline-block align-middle self-center">
-                <a class="text-sm text-green-700 hover:text-green-900" href="bitcoin:3NHERDFmUN8Af4vkNHWbhw9WDMEVNd61VW">
+                <a class="text-sm text-green-700 hover:text-green-900 whitespace-nowrap" href="bitcoin:3NHERDFmUN8Af4vkNHWbhw9WDMEVNd61VW">
                   3NHERDFmUN8Af4vkNHWbhw9WDMEVNd61VW <span aria-hidden="true">&rarr;</span>
                 </a>
                 </p>
               </div>
-              <div class="ml-20">
+              <div class="ml-20 whitespace-nowrap">
                 <button class="py-2 px-4 bg-green-500 text-white font-semibold
-                                                rounded-lg shadow-md hover:bg-green-700 focus:outline-none
-                                                focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
+                               rounded-lg shadow-md hover:bg-green-700
+                               focus:outline-none focus:ring-2
+                               focus:ring-green-400 focus:ring-opacity-75"
                         @click="clipboard">
                   Copy
                 </button>
                 <span class="opacity-0 copyAlert ml-2 text-green-900">Copied!</span>
               </div>
             </div>
+          </div>
+          <div class="p-4">
+            Or
+          </div>
+          <div class="flex justify-center">
+              <a href="https://twitter.com/intent/tweet?button_hashtag=laserEyesAI&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-size="large" data-text="Get you #lasereyes automatically placed with AI" data-url="https://lasereyes.everlyrusher.com/" data-show-count="false">Tweet #laserEyesAI</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </div>
       </div>
