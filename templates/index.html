@@ -4,9 +4,9 @@
   <head>
     <title>Laser Eyes Meme Maker /w AI - Upload a selfie and get your lasers automatically placed by AI.</title>
     <meta name="description" content="Upload a selfie or a foto containing a
-                face, our sofisticated AI algorithm will recognice it and add a
-                random laser on your eyes. Send multiple times for multiple
-                colors. Laser Eyes Meme Maker /w AI is easy and fast.">
+                            face, our sofisticated AI algorithm will recognice it and add a
+                            random laser on your eyes. Send multiple times for multiple
+                            colors. Laser Eyes Meme Maker /w AI is easy and fast.">
     <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
   </head>
   <body>
@@ -45,44 +45,44 @@
             </span>
           </h1>
           <!--<h2 class="text-3xl tracking-tight font-extrabold text-gray-900-->
-              <!--sm:text-4xl md:text-5xl">-->
-            <!--<span class="block xl:inline">Get your own lasers</span>-->
-            <!--<span class="block text-indigo-600 xl:inline">Now</span>-->
+          <!--sm:text-4xl md:text-5xl">-->
+          <!--<span class="block xl:inline">Get your own lasers</span>-->
+          <!--<span class="block text-indigo-600 xl:inline">Now</span>-->
           <!--</h2>-->
           <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            Upload a selfie or a foto containing a face, our sofisticated AI
-            algorithm will recognice it and add a random laser on your eyes.
-            Send multiple times for multiple colors. Laser Eyes Meme Maker /w
-            AI is easy and fast.
+          Upload a selfie or a foto containing a face, our sofisticated AI
+          algorithm will recognice it and add a random laser on your eyes.
+          Send multiple times for multiple colors. Laser Eyes Meme Maker /w
+          AI is easy and fast.
           </p>
           <!--<div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">-->
           <div class="max-w-7xl pt-5 mx-auto sm:px-6 lg:px-8">
             <!-- This example requires Tailwind CSS v2.0+ -->
             {% if errors %}
-              <div class="flex justify-center m-4">
-                <div class="rounded-md bg-red-50 p-4">
-                  <div class="flex">
-                    <div class="flex-shrink-0">
-                      <!-- Heroicon name: solid/x-circle -->
-                      <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                    <div class="ml-3 text-left">
-                      <h3 class="text-sm font-medium text-red-800">
-                        Some error occurred:
-                      </h3>
-                      <div class="mt-2 text-sm text-red-700">
-                        <ul class="list-disc pl-5 space-y-1">
-                          <li>
-                            Probably our AI was unable to detect a face in the image.
-                          </li>
-                        </ul>
-                      </div>
+            <div class="flex justify-center m-4">
+              <div class="rounded-md bg-red-50 p-4">
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <!-- Heroicon name: solid/x-circle -->
+                    <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <div class="ml-3 text-left">
+                    <h3 class="text-sm font-medium text-red-800">
+                      Some error occurred:
+                    </h3>
+                    <div class="mt-2 text-sm text-red-700">
+                      <ul class="list-disc pl-5 space-y-1">
+                        <li>
+                          Probably our AI was unable to detect a face in the image.
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
             {% endif %}
             <form class="space-y-8 divide-y divide-gray-200" action="/" method="POST" enctype="multipart/form-data">
               <div class="space-y-8 divide-y divide-gray-200">
@@ -94,10 +94,10 @@
                       </svg>
                       <div class="flex text-sm text-gray-600">
                         <label for="foto" class="relative cursor-pointer bg-white
-                                                             rounded-md font-medium text-indigo-600
-                                                             hover:text-indigo-500 focus-within:outline-none
-                                                             focus-within:ring-2 focus-within:ring-offset-2
-                                                             focus-within:ring-indigo-500 px-2 mx-1 bg-gray-100">
+                                                              rounded-md font-medium text-indigo-600
+                                                              hover:text-indigo-500 focus-within:outline-none
+                                                              focus-within:ring-2 focus-within:ring-offset-2
+                                                              focus-within:ring-indigo-500 px-2 mx-1 bg-gray-100">
                           <span>Upload a foto</span>
                           <!--<input id="file-upload" name="file-upload" type="file" >-->
                           <input type="file" id="foto" name="foto" class="sr-only" required @change="onChange" ref="file">
@@ -142,12 +142,12 @@
                   <div class="flex justify-center">
                     <div class="rounded-md shadow">
                       <button type="submit" class="w-full flex items-center
-                                    justify-center px-8 py-3 border
-                                    border-transparent text-base font-medium
-                                    rounded-md text-white bg-gradient-to-r
-                                    from-purple-500 to-indigo-600
-                                    hover:bg-indigo-700 md:py-4 md:text-lg
-                                    md:px-10">
+                                           justify-center px-8 py-3 border
+                                           border-transparent text-base font-medium
+                                           rounded-md text-white bg-gradient-to-r
+                                           from-purple-500 to-indigo-600
+                                           hover:bg-indigo-700 md:py-4 md:text-lg
+                                           md:px-10">
                         ✨  Laserize Me  ✨
                       </button>
                     </div>
@@ -160,28 +160,49 @@
       </main>
       <div class="bg-indigo-10 relative z-10 mt-10">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-24 lg:px-8
-            lg:flex lg:items-center lg:justify-between text-center">
+                    lg:flex lg:items-center lg:justify-between text-center">
           <!-- This example requires Tailwind CSS v2.0+ -->
-          <div class="bg-green-50 border-l-4 border-green-400 p-4">
-            <div class="flex flex-col sm:flex-row justify-center">
+          <div class="bg-green-50 border-l-4 border-green-400 p-4 space-y-2">
+            <div class="flex flex-col sm:flex-row">
               <div class="ml-3 mb-4 sm:mb-0 flex justify-center">
                 <span class="font-bold text-green-900 inline-block align-middle
-                  self-center mr-2">₿</span>
+                             self-center mr-2">₿</span>
                 <p class="inline-block align-middle self-center">
-                <a class="text-sm text-green-700 hover:text-green-900 whitespace-nowrap" href="bitcoin:3NHERDFmUN8Af4vkNHWbhw9WDMEVNd61VW">
+                <a class="text-sm text-green-700 hover:text-green-900 whitespace-nowrap" href="bitcoin:3NHERDFmUN8Af4vkNHWbhw9WDMEVNd61VW" target="_blank">
                   3NHERDFmUN8Af4vkNHWbhw9WDMEVNd61VW <span aria-hidden="true">&rarr;</span>
                 </a>
                 </p>
               </div>
               <div class="ml-20 whitespace-nowrap">
                 <button class="py-2 px-4 bg-green-500 text-white font-semibold
-                               rounded-lg shadow-md hover:bg-green-700
-                               focus:outline-none focus:ring-2
-                               focus:ring-green-400 focus:ring-opacity-75"
-                        @click="clipboard">
+                                rounded-lg shadow-md hover:bg-green-700
+                                focus:outline-none focus:ring-2
+                                focus:ring-green-400 focus:ring-opacity-75"
+                        @click="clipboard('btc')">
                   Copy
                 </button>
-                <span class="opacity-0 copyAlert ml-2 text-green-900">Copied!</span>
+                <span class="opacity-0 copyAlertbtc ml-2 text-green-900">Copied!</span>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row">
+              <div class="ml-3 mb-4 sm:mb-0 flex justify-center">
+                <span class="font-bold text-green-900 inline-block align-middle
+                             self-center mr-2">ADA</span>
+                <p class="inline-block align-middle self-center">
+                <a class="text-sm text-green-700 hover:text-green-900 whitespace-nowrap" href="web+cardano:addr1qxd7q5dgsca2m7qwfljcr49tkdjze0ew3n362wzlvl6yf4znm626908z26rmyr2aag5y9zqk3yj5ddku6hznvdc99zjs9vwla6" target="_blank">
+                  Yoroi Link 1 ADA <span class="line-through">or more. </span><span aria-hidden="true">&rarr;</span>
+                </a>
+                </p>
+              </div>
+              <div class="ml-20 whitespace-nowrap">
+                <button class="py-2 px-4 bg-green-500 text-white font-semibold
+                                rounded-lg shadow-md hover:bg-green-700
+                                focus:outline-none focus:ring-2
+                                focus:ring-green-400 focus:ring-opacity-75"
+                        @click="clipboard('cardano')">
+                  Copy
+                </button>
+                <span class="opacity-0 copyAlertcardano ml-2 text-green-900">Copied!</span>
               </div>
             </div>
           </div>
@@ -189,7 +210,7 @@
             Or
           </div>
           <div class="flex justify-center">
-              <a href="https://twitter.com/intent/tweet?button_hashtag=laserEyesAI&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-size="large" data-text="Get you #lasereyes automatically placed with AI" data-url="https://lasereyes.everlyrusher.com/" data-show-count="false">Tweet #laserEyesAI</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a href="https://twitter.com/intent/tweet?button_hashtag=laserEyesAI&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-size="large" data-text="Get you #lasereyes automatically placed with AI" data-url="https://lasereyes.everlyrusher.com/" data-show-count="false">Tweet #laserEyesAI</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </div>
       </div>
@@ -205,7 +226,8 @@
       el: '#app',
       data: {
         filelist: [], // Store our uploaded files
-        bitcoinAddress: "3NHERDFmUN8Af4vkNHWbhw9WDMEVNd61VW"
+        bitcoinAddress: "3NHERDFmUN8Af4vkNHWbhw9WDMEVNd61VW",
+        cardanoAddress: "addr1qxd7q5dgsca2m7qwfljcr49tkdjze0ew3n362wzlvl6yf4znm626908z26rmyr2aag5y9zqk3yj5ddku6hznvdc99zjs9vwla6"
       },
       methods: {
         onChange() {
@@ -235,14 +257,20 @@
           event.currentTarget.classList.add('bg-gray-100');
           event.currentTarget.classList.remove('bg-green-300');
         },
-        clipboard(event) {
+        clipboard(type) {
           if (!navigator.clipboard) {
             // Clipboard API not available
             return;
           }
           try {
-            navigator.clipboard.writeText(this.bitcoinAddress);
-            const copyDiv = document.querySelector('.copyAlert')
+            let address;
+            if (type == 'btc') {
+              address = this.bitcoinAddress
+            } else {
+              address = this.cardanoAddress
+            }
+            navigator.clipboard.writeText(address);
+            const copyDiv = document.querySelector('.copyAlert'+type)
             if(copyDiv) {
               copyDiv.classList.add('animate');
               copyDiv.addEventListener('animationend', () => {
