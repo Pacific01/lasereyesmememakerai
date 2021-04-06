@@ -40,6 +40,9 @@ def index():
         # Find all facial features in all the faces in the image
         face_landmarks_list = face_recognition.face_landmarks(image)
 
+        if len(face_landmarks_list) == 0:
+            return render_template('index.html', errors=True)
+
         # landmaks
         A, B, C, D, E, F = face_landmarks_list[0]['right_eye']
 
