@@ -28,14 +28,14 @@ python3 app.python3
 - Now you can access: http://0.0.0.0:8181/
 
 # Running the project (second time):
-- Running ti:
+- Running it:
 ```sh
 python3 app.python3
 ```
 
 # Running the project (docker):
 Docker does everything, install requirements and runs the app.
-```sh{}
+```sh
 docker-compose up -d
 ```
 
