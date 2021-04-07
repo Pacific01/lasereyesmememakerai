@@ -30,7 +30,7 @@ python3 app.python3
 # Running the project (second time):
 - Running it:
 ```sh
-python3 app.python3
+python3 app.py
 ```
 
 # Running the project (docker):
