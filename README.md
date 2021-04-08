@@ -67,6 +67,11 @@ csso static/app.css --output static/app.css
 export FLASK_ENV=development
 ```
 
+- How to extract requirements with `pipreqs`
+```sh
+pipreqs ./ --force
+```
+
 # Other documentation:
 - [Building a vue.js drag-and-drop file component](https://stenvdb.be/articles/building-a-vuejs-drag-and-drop-file-component)
 - [Escape string in jinja](https://jinja.palletsprojects.com/en/2.11.x/templates/#escaping)

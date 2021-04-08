@@ -2,6 +2,7 @@ from PIL import Image, ExifTags
 from flask import Flask, redirect, request, render_template, send_file
 from io import BytesIO
 from math import sqrt
+from waitress import serve
 import face_recognition
 import numpy as np
 import random
@@ -102,4 +103,4 @@ def index():
     else:
         return render_template('index.html')
 
-app.run(host='0.0.0.0', port=8181)
+serve(app, host='0.0.0.0', port=8181, url_scheme='https')

@@ -1,3 +1,5 @@
 Flask==1.1.2
+numpy==1.20.1
 face_recognition==1.3.0
+waitress==2.0.0
 Pillow==8.2.0
