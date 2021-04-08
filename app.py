@@ -1,8 +1,9 @@
+from PIL import Image, ExifTags
 from flask import Flask, redirect, request, render_template, send_file
-from PIL import Image
-import face_recognition
 from io import BytesIO
 from math import sqrt
+import face_recognition
+import numpy as np
 import random
 
 # HELPERS
@@ -27,15 +28,39 @@ def serve_pil_image(pil_img, pil_format, pil_mimetype):
     return send_file(img_io, mimetype=pil_mimetype, as_attachment=True,
             attachment_filename='laserized.' + str.lower(pil_format))
 
+def exifUp(image):
+    try:
+        for orientation in ExifTags.TAGS.keys():
+            if ExifTags.TAGS[orientation]=='Orientation':
+                break
+
+        exif = image._getexif()
+
+        if exif[orientation] == 3:
+            image=image.rotate(180, expand=True)
+        elif exif[orientation] == 6:
+            image=image.rotate(270, expand=True)
+        elif exif[orientation] == 8:
+            image=image.rotate(90, expand=True)
+
+    except (AttributeError, KeyError, IndexError):
+        # cases: image don't have getexif
+        pass
+    return image
+
 app = Flask(__name__)
 
 @app.route('/',methods = ['POST', 'GET'])
 def index():
     if request.method == 'POST':
+        # Convert image into PIL image
         pilOrigFoto = Image.open(request.files['foto'].stream)
 
-        # Load the jpg file into a numpy array
-        image = face_recognition.load_image_file(request.files['foto'])
+        # Straighten the image - Mobiles sometimes put images sideways
+        image = exifUp(pilOrigFoto)
+
+        # Load the jpg file into a numpy
+        image = np.array(image.convert('RGB'))
 
         # Find all facial features in all the faces in the image
         face_landmarks_list = face_recognition.face_landmarks(image)

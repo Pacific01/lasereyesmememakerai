@@ -73,3 +73,5 @@ export FLASK_ENV=development
 - [Emojipedia](https://emojipedia.org/sparkles/)
 - [PIL Docs](https://pillow.readthedocs.io/en/stable/reference/Image.html)
 - [Copy to clipboard in Vue](https://daily-dev-tips.com/posts/vanilla-javascript-copy-text-to-clipboard-with-clipboard-api/)
+- [EXIF rotations problem](https://github.com/ageitgey/face_recognition/wiki/Common-Errors#issue-its-not-detecting-faces-in-my-very-simple-image-i-took-with-my-iphone--android-phone)
+- [Rotate EXIF in python](https://stackoverflow.com/questions/13872331/rotating-an-image-with-orientation-specified-in-exif-using-python-without-pil-in)

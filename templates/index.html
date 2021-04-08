@@ -4,13 +4,12 @@
   <head>
     <title>Laser Eyes Meme Maker /w AI - Upload a selfie and get your lasers automatically placed by AI.</title>
     <meta name="description" content="Upload a selfie or a foto containing a
-                            face, our sofisticated AI algorithm will recognice it and add a
-                            random laser on your eyes. Send multiple times for multiple
-                            colors. Laser Eyes Meme Maker /w AI is easy and fast.">
+                                      face, our sofisticated AI algorithm will recognice it and add a
+                                      random laser on your eyes. Send multiple times for multiple
+                                      colors. Laser Eyes Meme Maker /w AI is easy and fast.">
     <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
   </head>
   <body>
-
     <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="relative z-0 bg-gray-50 overflow-hidden" id="app">
 
@@ -40,24 +39,18 @@
         <div class="text-center">
           <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl text-indigo-600">
             <span class="block xl:inline bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                Laser Eyes
+              Laser Eyes
             </span>
             <span class="block xl:inline bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
               Meme Maker /w AI
             </span>
           </h1>
-          <!--<h2 class="text-3xl tracking-tight font-extrabold text-gray-900-->
-          <!--sm:text-4xl md:text-5xl">-->
-          <!--<span class="block xl:inline">Get your own lasers</span>-->
-          <!--<span class="block text-indigo-600 xl:inline">Now</span>-->
-          <!--</h2>-->
           <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
           Upload a selfie or a foto containing a face, our sofisticated AI
           algorithm will recognice it and add a random laser on your eyes.
           Send multiple times for multiple colors. Laser Eyes Meme Maker /w
           AI is easy and fast.
           </p>
-          <!--<div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">-->
           <div class="max-w-7xl pt-5 mx-auto sm:px-6 lg:px-8">
             <!-- This example requires Tailwind CSS v2.0+ -->
             {% if errors %}
@@ -96,13 +89,14 @@
                       </svg>
                       <div class="flex text-sm text-gray-600">
                         <label for="foto" class="relative cursor-pointer bg-white
-                                                              rounded-md font-medium text-indigo-600
-                                                              hover:text-indigo-500 focus-within:outline-none
-                                                              focus-within:ring-2 focus-within:ring-offset-2
-                                                              focus-within:ring-indigo-500 px-2 mx-1 bg-gray-100">
+                                                               rounded-md font-medium text-indigo-600
+                                                               hover:text-indigo-500 focus-within:outline-none
+                                                               focus-within:ring-2 focus-within:ring-offset-2
+                                                               focus-within:ring-indigo-500 px-2 mx-1 bg-gray-100">
                           <span>Upload a foto</span>
-                          <!--<input id="file-upload" name="file-upload" type="file" >-->
-                          <input type="file" id="foto" name="foto" class="sr-only" required @change="onChange" ref="file">
+                          <input type="file" id="foto" name="foto"
+                          class="sr-only" required @change="onChange" ref="file"
+                          accept="image/*;capture=camera">
                         </label>
                         <p class="pl-1">or drag and drop</p>
                       </div>
@@ -144,12 +138,12 @@
                   <div class="flex justify-center">
                     <div class="rounded-md shadow">
                       <button type="submit" class="w-full flex items-center
-                                           justify-center px-8 py-3 border
-                                           border-transparent text-base font-medium
-                                           rounded-md text-white bg-gradient-to-r
-                                           from-purple-500 to-indigo-600
-                                           hover:bg-indigo-700 md:py-4 md:text-lg
-                                           md:px-10">
+                                                   justify-center px-8 py-3 border
+                                                   border-transparent text-base font-medium
+                                                   rounded-md text-white bg-gradient-to-r
+                                                   from-purple-500 to-indigo-600
+                                                   hover:bg-indigo-700 md:py-4 md:text-lg
+                                                   md:px-10">
                         ✨  Laserize Me  ✨
                       </button>
                     </div>
@@ -158,17 +152,17 @@
               </div>
             </form>
           </div>
-          </div>
+        </div>
       </main>
       <div class="bg-indigo-10 relative z-10 mt-10">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-24 lg:px-8
-                    lg:flex lg:items-center lg:justify-between text-center">
+                     lg:flex lg:items-center lg:justify-between text-center">
           <!-- This example requires Tailwind CSS v2.0+ -->
           <div class="bg-green-50 border-l-4 border-green-400 p-4 space-y-2">
             <div class="flex flex-col sm:flex-row">
               <div class="ml-3 mb-4 sm:mb-0 flex justify-center">
                 <span class="font-bold text-green-900 inline-block align-middle
-                             self-center mr-2">₿</span>
+                              self-center mr-2">₿</span>
                 <p class="inline-block align-middle self-center">
                 <a class="text-sm text-green-700 hover:text-green-900 whitespace-nowrap" href="bitcoin:3NHERDFmUN8Af4vkNHWbhw9WDMEVNd61VW" target="_blank">
                   3NHERDFmUN8Af4vkNHWbhw9WDMEVNd61VW <span aria-hidden="true">&rarr;</span>
@@ -177,9 +171,9 @@
               </div>
               <div class="ml-20 whitespace-nowrap">
                 <button class="py-2 px-4 bg-green-500 text-white font-semibold
-                                rounded-lg shadow-md hover:bg-green-700
-                                focus:outline-none focus:ring-2
-                                focus:ring-green-400 focus:ring-opacity-75"
+                                 rounded-lg shadow-md hover:bg-green-700
+                                 focus:outline-none focus:ring-2
+                                 focus:ring-green-400 focus:ring-opacity-75"
                         @click="clipboard('btc')">
                   Copy
                 </button>
@@ -189,7 +183,7 @@
             <div class="flex flex-col sm:flex-row">
               <div class="ml-3 mb-4 sm:mb-0 flex justify-center">
                 <span class="font-bold text-green-900 inline-block align-middle
-                             self-center mr-2">ADA</span>
+                              self-center mr-2">ADA</span>
                 <p class="inline-block align-middle self-center">
                 <a class="text-sm text-green-700 hover:text-green-900 whitespace-nowrap" href="web+cardano:addr1qxd7q5dgsca2m7qwfljcr49tkdjze0ew3n362wzlvl6yf4znm626908z26rmyr2aag5y9zqk3yj5ddku6hznvdc99zjs9vwla6" target="_blank">
                   Yoroi Link 1 ADA <span class="line-through">or more. </span><span aria-hidden="true">&rarr;</span>
@@ -198,9 +192,9 @@
               </div>
               <div class="ml-20 whitespace-nowrap">
                 <button class="py-2 px-4 bg-green-500 text-white font-semibold
-                                rounded-lg shadow-md hover:bg-green-700
-                                focus:outline-none focus:ring-2
-                                focus:ring-green-400 focus:ring-opacity-75"
+                                 rounded-lg shadow-md hover:bg-green-700
+                                 focus:outline-none focus:ring-2
+                                 focus:ring-green-400 focus:ring-opacity-75"
                         @click="clipboard('cardano')">
                   Copy
                 </button>
@@ -216,9 +210,9 @@
           </div>
         </div>
       </div>
-        </div>
-        <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-        <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+    </div>
+    <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
   </body>
 
   <script src="https://unpkg.com/vue@2.6.12/dist/vue.min.js"></script>
